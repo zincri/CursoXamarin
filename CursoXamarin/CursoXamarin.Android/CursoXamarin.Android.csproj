@@ -87,6 +87,14 @@
     <AndroidResource Include="Resources\drawable\fondo.jpg" />
     <AndroidResource Include="Resources\drawable\lobo.jpg" />
     <AndroidResource Include="Resources\drawable\ig.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fondo.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\ig.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\fondo.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ig.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\fondo.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ig.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\fondo.jpg" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ig.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

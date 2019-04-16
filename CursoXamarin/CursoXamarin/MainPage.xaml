@@ -44,7 +44,8 @@
                             Placeholder="usuario"
                             PlaceholderColor="#fda8ff"
                             BackgroundColor="Transparent"
-                            VerticalOptions="Center"></Entry>
+                            VerticalOptions="Center"
+                            x:Name="user"></Entry>
                 </Frame>
                 <Frame
                         Margin="0,10,0,0"
@@ -63,7 +64,8 @@
                             Placeholder="password"
                             PlaceholderColor="#fda8ff"
                             BackgroundColor="Transparent"
-                            VerticalOptions="Center"></Entry>
+                            VerticalOptions="Center"
+                            x:Name="password"></Entry>
                 </Frame>
 
             </StackLayout>
@@ -80,6 +82,7 @@
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="true"
                         Text="Login"
+                        Clicked="Login"
                         TextColor="White"></Button>
                     <Button
                         BackgroundColor="#df42f4"
@@ -87,6 +90,7 @@
                         HeightRequest="60"
                         HorizontalOptions="FillAndExpand"
                         Text="Register"
+                        Clicked="Register"
                         TextColor="White"></Button>
             </StackLayout>
 

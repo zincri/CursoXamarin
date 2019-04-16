@@ -12,6 +12,18 @@ namespace CursoXamarin
         public MainPage()
         {
             InitializeComponent();
+            //user.Text = string.Empty;
+            //password.Text = string.Empty;
+        }
+        void Login(object sender, System.EventArgs e)
+        {
+            App.Current.MainPage.DisplayAlert("Mensaje","Click en Login, "+user.Text,"Ok");
+
+
+        }
+        void Register(object sender, System.EventArgs e)
+        {
+            App.Current.MainPage.DisplayAlert("Mensaje", "Click en Register, " + user.Text, "Ok");
         }
     }
 }
