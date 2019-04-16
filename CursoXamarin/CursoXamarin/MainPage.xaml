@@ -1,23 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CursoXamarin"
              x:Class="CursoXamarin.MainPage"
+             BackgroundImage="fondo.jpg"
              Title="Login">
 
     <ScrollView>
         <StackLayout
             Padding="5">
             <!-- Place new controls here -->
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Inicia sesión"
+                   Margin="0,10"
                    HorizontalOptions="CenterAndExpand" 
+                   Font="Bold"
+                   TextColor="#fda8ff"
+                   FontSize="Large"
                    VerticalOptions="CenterAndExpand" />
-            <Image 
-                    Source="w.jpg"
+            <Image
+                    Source="ig.png"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
-                    HeightRequest="100"
-                    WidthRequest="300"/>
+                    WidthRequest="150"/>
             <StackLayout
                     VerticalOptions="CenterAndExpand"
                     Orientation="Vertical"
@@ -26,24 +30,65 @@
                 <Frame
                         Margin="0,10,0,0"
                         HasShadow="true"
-                        OutlineColor="Navy"
-                        BackgroundColor="Navy"
+                        OutlineColor="#fda8ff"
+                        BackgroundColor="Transparent"
                         HeightRequest="60"
                         CornerRadius="30"
                         Padding="10,0">
                     <Entry 
-                            TextColor="White"
+                            TextColor="#fda8ff"
                             FontSize="16"
                             HeightRequest="60"
+                            Opacity="0.5"
                             HorizontalTextAlignment="Center"
                             Placeholder="usuario"
-                            PlaceholderColor="White"
+                            PlaceholderColor="#fda8ff"
+                            BackgroundColor="Transparent"
+                            VerticalOptions="Center"></Entry>
+                </Frame>
+                <Frame
+                        Margin="0,10,0,0"
+                        HasShadow="true"
+                        OutlineColor="#fda8ff"
+                        BackgroundColor="Transparent"
+                        HeightRequest="60"
+                        CornerRadius="30"
+                        Padding="10,0">
+                    <Entry 
+                            TextColor="#fda8ff"
+                            FontSize="16"
+                            HeightRequest="60"
+                            Opacity="0.5"
+                            HorizontalTextAlignment="Center"
+                            Placeholder="password"
+                            PlaceholderColor="#fda8ff"
                             BackgroundColor="Transparent"
                             VerticalOptions="Center"></Entry>
                 </Frame>
 
             </StackLayout>
-
+            
+            <StackLayout
+                    Padding="30,0"
+                    Margin="0,0,0,0"
+                    Orientation="Vertical"
+                    VerticalOptions="CenterAndExpand">
+                    <Button
+                        BackgroundColor="#fda8ff"
+                        BorderRadius="30"
+                        HeightRequest="60"
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="true"
+                        Text="Login"
+                        TextColor="White"></Button>
+                    <Button
+                        BackgroundColor="#df42f4"
+                        BorderRadius="30"
+                        HeightRequest="60"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Register"
+                        TextColor="White"></Button>
+            </StackLayout>
 
         </StackLayout>
     </ScrollView>
