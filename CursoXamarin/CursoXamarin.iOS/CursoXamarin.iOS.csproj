@@ -157,4 +157,10 @@
       <Name>CursoXamarin</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fazt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fondo.jpg" />
+  </ItemGroup>
 </Project>
