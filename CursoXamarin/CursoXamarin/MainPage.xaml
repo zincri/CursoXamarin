@@ -104,7 +104,7 @@
                     HorizontalOptions="FillAndExpand"
                     Text="Registrar"
                     IsEnabled="True"
-                    BackgroundColor="Pink"
+                    BackgroundColor="MistyRose"
                     Clicked="Register"
                    
                     >
