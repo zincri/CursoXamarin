@@ -77,10 +77,11 @@
 
             </StackLayout>
             
-             <StackLayout Padding="30,0"
+             <StackLayout 
+                    Padding="30,0"
                      Margin="0,0,0,0"
                      Orientation="Vertical"
-                     HorizontalOptions="CenterAndExpand">
+                     VerticalOptions="CenterAndExpand">
             
             <Button
                     BorderRadius="30"
