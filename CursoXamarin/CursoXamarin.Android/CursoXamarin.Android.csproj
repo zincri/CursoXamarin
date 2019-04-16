@@ -84,6 +84,14 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\Ic.png" />
     <AndroidResource Include="Resources\drawable\fondo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Ic.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Ic.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Ic.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Ic.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fondo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\fondo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\fondo.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\fondo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
