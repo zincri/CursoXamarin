@@ -10,8 +10,10 @@ namespace CursoXamarin
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            NavigationPage objeto = new NavigationPage(new Views.LoginPage());
+            objeto.BarBackgroundColor = Color.FromHex("#320172");
+            objeto.BarTextColor = Color.FromHex("#fda8ff");
+            MainPage = objeto;
         }
 
         protected override void OnStart()

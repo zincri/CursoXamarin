@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:CursoXamarin"
-             x:Class="CursoXamarin.MainPage"
-             BackgroundImage="fondo.jpg"
-             Title="Login">
-             ¡
-    <ScrollView>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="CursoXamarin.Views.LoginPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator} }"
+    BackgroundImage="fondo.jpg"
+    Title="Login">
+    <ContentPage.Content>
+    <ScrollView
+            BindingContext="{Binding Login}">
         <StackLayout
             Padding="5">
             <!-- Place new controls here -->
@@ -36,6 +38,7 @@
                         CornerRadius="30"
                         Padding="10,0">
                     <Entry 
+                            Text="{Binding Usuario, Mode=TwoWay}"
                             TextColor="#fda8ff"
                             FontSize="16"
                             HeightRequest="60"
@@ -44,8 +47,7 @@
                             Placeholder="usuario"
                             PlaceholderColor="#fda8ff"
                             BackgroundColor="Transparent"
-                            VerticalOptions="Center"
-                            x:Name="user"></Entry>
+                            VerticalOptions="Center"></Entry>
                 </Frame>
                 <Frame
                         Margin="0,10,0,0"
@@ -64,8 +66,7 @@
                             Placeholder="password"
                             PlaceholderColor="#fda8ff"
                             BackgroundColor="Transparent"
-                            VerticalOptions="Center"
-                            x:Name="password"></Entry>
+                            VerticalOptions="Center"></Entry>
                 </Frame>
 
             </StackLayout>
@@ -82,7 +83,6 @@
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="true"
                         Text="Login"
-                        Clicked="Login"
                         TextColor="White"></Button>
                     <Button
                         BackgroundColor="#df42f4"
@@ -90,11 +90,10 @@
                         HeightRequest="60"
                         HorizontalOptions="FillAndExpand"
                         Text="Register"
-                        Clicked="Register"
                         TextColor="White"></Button>
             </StackLayout>
 
         </StackLayout>
     </ScrollView>
-
+    </ContentPage.Content>
 </ContentPage>

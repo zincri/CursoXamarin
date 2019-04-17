@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace CursoXamarin.iOS
 {
@@ -24,6 +25,9 @@ namespace CursoXamarin.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            //var statusBar = Windows.app.ViewManagement.StatusBar.GetForCurrentView();
+            //var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+
 
             return base.FinishedLaunching(app, options);
         }
