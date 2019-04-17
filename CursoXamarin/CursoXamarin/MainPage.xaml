@@ -20,7 +20,7 @@
                    
                    />
             <Image 
-                    Source="fazt.jpg"
+                    Source="login.jpg"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     WidthRequest="150"/>
