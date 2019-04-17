@@ -15,6 +15,8 @@ namespace CursoXamarin.Views
         public LoginPage()
         {
             InitializeComponent();
+
+
         }
     }
 }

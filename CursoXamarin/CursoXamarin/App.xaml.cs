@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CursoXamarin.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,12 @@ namespace CursoXamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+          
+            //MainPage = new NavigationPage(new LoginPage());
+            NavigationPage obj= new NavigationPage(new LoginPage());
+            obj.BackgroundColor = Color.FromHex("#f75d86");
+            obj.BarTextColor = Color.FromHex("#FFFFFF");
+            MainPage = obj;
         }
 
         protected override void OnStart()

@@ -12,8 +12,10 @@ namespace CursoXamarin
         public MainPage()
         {
             InitializeComponent();
-            User.Text = String.Empty;
-            Password.Text = String.Empty;    //Cadena Vacia similar a poner Empty
+           
+           
+             User.Text = String.Empty;
+          Password.Text = String.Empty;    //Cadena Vacia similar a poner Empty
 
         }
 
