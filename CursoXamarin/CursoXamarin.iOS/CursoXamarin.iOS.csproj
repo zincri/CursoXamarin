@@ -164,4 +164,10 @@
     <BundleResource Include="Resources\lobo.jpg" />
     <BundleResource Include="Resources\ig.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\android.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sp.png" />
+  </ItemGroup>
 </Project>

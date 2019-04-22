@@ -9,11 +9,24 @@
             get;
             set;
         }
+
+        public string Password
+        {
+            get;
+            set;
+        }
+
+        public bool Isenable
+        { get; set; }
         #endregion
+
         #region Constructors
         public LoginViewModel()
         {
-            Usuario = "zincri";
+            Usuario = "Borraz";
+            Password = "1234";
+            Isenable = false;
+        
         }
         #endregion
     }
