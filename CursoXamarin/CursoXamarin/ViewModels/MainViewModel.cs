@@ -12,6 +12,7 @@ namespace CursoXamarin.ViewModels
         #region Constructors
         public MainViewModel()
         {
+            //patron de singleton
             instance = this;
             this.Login = new LoginViewModel();
 

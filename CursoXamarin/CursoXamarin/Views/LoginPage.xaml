@@ -67,6 +67,8 @@
                         Padding="10,0">
                     
                     <Entry 
+                            Text="{Binding Password,Mode= TwoWay}"
+                            IsPassword="true"
                             TextColor="Fuchsia"
                             FontSize="16"
                             HeightRequest="60"
@@ -88,11 +90,12 @@
                      VerticalOptions="CenterAndExpand">
             
             <Button
+                   
                     BorderRadius="30"
                     HeightRequest="60"
                     HorizontalOptions="FillAndExpand"
                     Text="Login"
-                    IsEnabled="true"
+                    IsEnabled="{Binding IsEnabled,Mode=TwoWay}"
                     BackgroundColor="#bdfce5"
                    
             ></Button>
