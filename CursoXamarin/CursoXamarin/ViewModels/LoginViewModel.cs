@@ -9,11 +9,23 @@
             get;
             set;
         }
+        public string Password
+        {
+            get;
+            set;
+        }
+        public bool IsEnabled
+        {
+            get;
+            set;
+        }
         #endregion
         #region Constructors
         public LoginViewModel()
         {
-            Usuario = "zincri";
+            Usuario = "Vilchis";
+            Password = "Password";
+            IsEnabled = false;
         }
         #endregion
     }

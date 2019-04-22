@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="CursoXamarin.Views.LoginPage"
-    BindingContext="{Binding Main, Source={StaticResource Locator} }"
+    BindingContext="{Binding Mainx, Source={StaticResource Locator} }"
     BackgroundImage="fondo.jpg"
     Title="Login">
     <ContentPage.Content>
@@ -58,6 +58,8 @@
                         CornerRadius="30"
                         Padding="10,0">
                     <Entry 
+                            Text="{Binding Password,Mode=TwoWay}"
+                            IsPassword="True"
                             TextColor="#fda8ff"
                             FontSize="16"
                             HeightRequest="60"
@@ -77,11 +79,12 @@
                     Orientation="Vertical"
                     VerticalOptions="CenterAndExpand">
                     <Button
+                        
                         BackgroundColor="#fda8ff"
                         BorderRadius="30"
                         HeightRequest="60"
                         HorizontalOptions="FillAndExpand"
-                        IsEnabled="true"
+                        IsEnabled="{Binding IsEnabled,Mode=TwoWay}"
                         Text="Login"
                         TextColor="White"></Button>
                     <Button
