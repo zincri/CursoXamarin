@@ -85,7 +85,12 @@
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                         Text="Login"
-                        TextColor="White"></Button>
+                        TextColor="White"
+                        Command="{Binding LoginCommand}"
+                        >
+                        
+                        
+                    </Button>
                     <Button
                         BackgroundColor="#df42f4"
                         BorderRadius="30"
