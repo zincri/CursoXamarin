@@ -1,7 +1,10 @@
 ﻿
 namespace CursoXamarin.ViewModels
 {
+    using CursoXamarin.Views;
+    using GalaSoft.MvvmLight.Command;
     using System;
+    using System.Windows.Input;
 
     public class LoginViewModel
     {
@@ -17,8 +20,23 @@ namespace CursoXamarin.ViewModels
         {
             this.Usuario = "Jhoana Dominguez";
             this.Password = "1234";
-            IsEnabled = false;
+            IsEnabled = true;
         }
+        #endregion
+
+        #region Commands
+        public ICommand LoginCommand { get { return new RelayCommand(LoginMethod); } }
+        #endregion
+
+        #region Method
+        private async void LoginMethod()
+        {
+            //App.Current.MainPage.DisplayAlert("Login", "click en login ", "ok");
+            //IsEnabled = false; 
+            await App.Current.MainPage.Navigation.PushAsync(new TwoPage());
+          
+        }
+
         #endregion
     }
 }
