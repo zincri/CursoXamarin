@@ -1,6 +1,9 @@
 ﻿namespace CursoXamarin.ViewModels
 {
     using System;
+    using System.Windows.Input;
+    using GalaSoft.MvvmLight.Command;
+
     public class LoginViewModel
     {
         #region Properties
@@ -14,7 +17,7 @@
             get;
             set;
         }
-        public bool IsEnabled 
+        public bool IsEnabled
         {
             get;
             set;
@@ -26,8 +29,26 @@
         {
             Usuario = "zincri";
             Password = "123456";
-            IsEnabled = false;
+            IsEnabled = true;
         }
         #endregion
+        #region Commands
+        public ICommand LoginCommand
+        {
+            get
+            {
+                return new RelayCommand(AccessMethod);
+            }
+        }
+        #endregion
+        private async void AccessMethod()
+        {
+            //IsEnabled = false;
+            //App.Current.MainPage.DisplayAlert("Message", "Clic en Login", "Ok");
+            //IsEnabled = false;
+            //App.Current.MainPage.DisplayAlert("Message", "flag: "+IsEnabled, "Ok");
+            await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
+
+        }
     }
 }
