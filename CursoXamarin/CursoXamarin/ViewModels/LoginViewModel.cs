@@ -1,11 +1,19 @@
 ﻿namespace CursoXamarin.ViewModels
 {
     using System;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
 
-    public class LoginViewModel
+    public class LoginViewModel : INotifyPropertyChanged
     {
+        #region Events
+        public event PropertyChangedEventHandler PropertyChanged;
+        #endregion
+        #region Vars
+        private bool _isEnabled;
+        #endregion
         #region Properties
         public string Usuario
         {
@@ -19,8 +27,15 @@
         }
         public bool IsEnabled
         {
-            get;
-            set;
+            get 
+            {
+                return _isEnabled;
+            }
+            set 
+            {
+                _isEnabled = value;
+                OnPropertyChanged();
+            }
         }
 
         #endregion
@@ -40,7 +55,10 @@
                 return new RelayCommand(AccessMethod);
             }
         }
+
+
         #endregion
+        #region Methods
         private async void AccessMethod()
         {
             //IsEnabled = false;
@@ -48,7 +66,16 @@
             //IsEnabled = false;
             //App.Current.MainPage.DisplayAlert("Message", "flag: "+IsEnabled, "Ok");
             await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
+            IsEnabled = false;
 
         }
+        private void OnPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
     }
 }
