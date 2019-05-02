@@ -3,10 +3,23 @@
     using CursoXamarin.Views;
     using GalaSoft.MvvmLight.Command;
     using System;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
     using System.Windows.Input;
 
-    public class LoginViewModel
+    public class LoginViewModel : INotifyPropertyChanged
     {
+        #region Vars
+        private bool _isEnable
+
+        {
+            get;
+            set;
+
+        }
+
+        #endregion
+
         #region Properties
         public string Usuario
         {
@@ -20,26 +33,52 @@
         }
         public bool IsEnabled
         {
-            get;
-            set;
+            get
+            {
+
+                return _isEnable;
+            }
+            set {
+
+                _isEnable = value;
+                OnPropertyChanged();
+
+            }
         }
 
         #endregion
         
         #region Commands
         public ICommand LoginCommand { get { return new RelayCommand(LoginMethod); } }
+
+
         #endregion
+
+        #region Events
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
+
+        #region Methods
         private async void LoginMethod()
         {
 
             //App.Current.MainPage.DisplayAlert("login","click en login","ok");
             //IsEnabled = false;
-            await App.Current.MainPage.Navigation.PushAsync (new TwoPage());
-            
+            await App.Current.MainPage.Navigation.PushAsync(new TwoPage());
+
         }
 
+        private void OnPropertyChanged([CallerMemberName]String PropetyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(PropetyName));
+            }
 
 
+        }
+        #endregion
 
         #region Constructors
         public LoginViewModel()

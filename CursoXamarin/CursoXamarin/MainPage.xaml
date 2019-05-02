@@ -5,7 +5,7 @@
              x:Class="CursoXamarin.MainPage"
              BackgroundImage="fondo.jpg"
              Title="Login">
-             ¡
+             
     <ScrollView>
         <StackLayout
             Padding="5">
