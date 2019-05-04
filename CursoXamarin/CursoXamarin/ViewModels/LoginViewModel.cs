@@ -15,6 +15,16 @@
             get;
             set;
         }
+
+        private String _usuario {
+            get;
+            set;
+        }
+
+        private String _password {
+            get;
+            set; 
+        }
         
         #endregion
 
@@ -22,14 +32,24 @@
         #region Properties
         public string Usuario
         {
-            get;
-            set;
+            get { return _usuario; }
+            set {
+                _usuario = value;
+                OnPropertyChanged();
+            }
         }
 
         public string Password
         {
-            get;
-            set;
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                _password = value;
+                OnPropertyChanged();
+            }
         }
 
         public bool Isenable
@@ -68,6 +88,7 @@
             }
         }
         #endregion
+        
         #region Events
         public event PropertyChangedEventHandler PropertyChanged;
 
