@@ -102,7 +102,7 @@
             //Isenable = false;
 
             await App.Current.MainPage.Navigation.PushAsync(new Two());
-            Isenable = false;
+            //Isenable = false;
 
         }
 
