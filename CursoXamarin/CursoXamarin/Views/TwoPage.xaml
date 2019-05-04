@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CursoXamarin.Views.TwoPage">
     <ContentPage.Content>
-        <Label Text="Zincri"
-               FontSize="Large"
+        <Label Text="BIENVENIDO DARINEL CIGARROA DE LOS SANTOS"
+               FontSize="Medium"
                TextColor="Navy"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"></Label>

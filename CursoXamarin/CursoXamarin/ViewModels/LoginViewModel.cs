@@ -6,9 +6,9 @@
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
 
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : INotifyPropertyChanged // evento que dice que se guarde en property
     {
-        #region Eventss
+        #region Events
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
         #region Vars
@@ -27,7 +27,7 @@
             set
             {
                 _usuario = value;
-                OnPropertyChanged();
+                OnPropertyChanged(); //
             }
         }
 
@@ -61,34 +61,29 @@
         #region Constructors
         public LoginViewModel()
         {
-            Usuario = "zincri";
-            Password = "123456";
+            Usuario = "Darinel";
+            Password = "darinel293";
             IsEnabled = true;
         }
         #endregion
         #region Commands
-        public ICommand LoginCommand
+        public ICommand LoginCommand // ICommand es una interfaz (todas las interfaces por convecion llevan I)
         {
             get
             {
-                return new RelayCommand(AccessMethod);
+                return new RelayCommand(LoginsMethod);
             }
         }
 
 
         #endregion
         #region Methods
-        private async void AccessMethod()
+        private async void LoginsMethod()
         {
-            //IsEnabled = false;
-            //App.Current.MainPage.DisplayAlert("Message", "Clic en Login", "Ok");
-            //IsEnabled = false;
-            //App.Current.MainPage.DisplayAlert("Message", "flag: "+IsEnabled, "Ok");
-            await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
-            IsEnabled = false;
+            await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage()); //push lanzamos, pop regresamos
         }
 
-        private void OnPropertyChanged([CallerMemberName] String propertyName = "")
+        private void OnPropertyChanged([CallerMemberName] String propertyName = "") 
         {
             if (PropertyChanged != null)
             {
