@@ -8,7 +8,7 @@
 
     public class LoginViewModel : INotifyPropertyChanged
     {
-        #region Eventss
+        #region Events
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
         #region Vars
@@ -17,7 +17,7 @@
         private string _usuario;
         #endregion
         #region Properties
-
+        
         public string Usuario
         {
             get
@@ -71,21 +71,16 @@
         {
             get
             {
-                return new RelayCommand(AccessMethod);
+                return new RelayCommand(LoginMethod);
             }
         }
-
-
         #endregion
         #region Methods
-        private async void AccessMethod()
+        private async void LoginMethod()
         {
-            //IsEnabled = false;
-            //App.Current.MainPage.DisplayAlert("Message", "Clic en Login", "Ok");
-            //IsEnabled = false;
-            //App.Current.MainPage.DisplayAlert("Message", "flag: "+IsEnabled, "Ok");
+
             await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
-            IsEnabled = false;
+
         }
 
         private void OnPropertyChanged([CallerMemberName] String propertyName = "")
