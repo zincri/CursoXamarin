@@ -8,23 +8,42 @@
 
     public class LoginViewModel : INotifyPropertyChanged
     {
-        #region Events
+        #region Eventss
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
         #region Vars
         private bool _isEnabled;
+        private string _password;
+        private string _usuario;
         #endregion
         #region Properties
+
         public string Usuario
         {
-            get;
-            set;
+            get
+            {
+                return _usuario;
+            }
+            set
+            {
+                _usuario = value;
+                OnPropertyChanged();
+            }
         }
+
         public string Password
         {
-            get;
-            set;
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                _password = value;
+                OnPropertyChanged();
+            }
         }
+
         public bool IsEnabled
         {
             get 
@@ -67,8 +86,8 @@
             //App.Current.MainPage.DisplayAlert("Message", "flag: "+IsEnabled, "Ok");
             await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
             IsEnabled = false;
-
         }
+
         private void OnPropertyChanged([CallerMemberName] String propertyName = "")
         {
             if (PropertyChanged != null)
