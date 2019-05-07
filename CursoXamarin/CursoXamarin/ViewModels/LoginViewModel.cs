@@ -80,6 +80,7 @@
         {
 
             await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
+            Password = String.Empty;
 
         }
 
