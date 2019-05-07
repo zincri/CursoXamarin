@@ -19,6 +19,8 @@ namespace CursoXamarin.ViewModels
 
         #region Vars
         private bool _isEnabled;
+        private string _usuario;
+        private string _password;
 
         #endregion
 
@@ -27,8 +29,42 @@ namespace CursoXamarin.ViewModels
 
 
         #region Properties
-        public String Usuario { get; set; }
-        public String password { get; set; }
+        public String Usuario
+        {
+
+            get
+            {
+                return _usuario;
+
+            }
+
+
+            set
+            {
+                _usuario = value;
+                OnPropertyChanged();// Evento que nos avisa que se hizo un cambio
+            }
+
+        }
+        public String password
+        {
+
+            get
+            {
+                return _usuario;
+
+            }
+
+
+            set
+            {
+                _password = value;
+                OnPropertyChanged();
+            }
+
+
+
+        }
         public bool IsEnabled { get { return _isEnabled; } set { _isEnabled = value; OnPropertyChanged(); } }
 
 
@@ -44,14 +80,18 @@ namespace CursoXamarin.ViewModels
         #region Methods
         private async void LoginMethod()
         {
-
+           // IsEnabled =false; solo se pone cuando va ha cargar...
+            Usuario = string.Empty;
+            //password = string.Empty;// La mejor como poner cada vacia... 
 
             //App.Current.MainPage.DisplayAlert("Login","Click en Login" ,"Ok");
             //IsEnabled = false;
 
-            await App.Current.MainPage.Navigation.PushAsync(new TwoPage());  // Para lanzar otra pagina 
+            await App.Current.MainPage.Navigation.PushAsync(new TwoPage());  // Async (Especifica que va ha mandar una tarea) tiene que ir de la mano con await es un esperador...
             IsEnabled = false;
         }
+
+
 
         #endregion
 
@@ -68,12 +108,12 @@ namespace CursoXamarin.ViewModels
 
         // Para no esceficar lo que va ha llamar
         //Brackquets especificamos que tiene que pasar por CallerMember
-        private void OnPropertyChanged([CallerMemberName] String PropertyName = "")
-        {
+        private void OnPropertyChanged([CallerMemberName] String PropertyName = "")  //Nos sirve para actualizar...//Nos sirve para actualizar...
+        {      //Para actualizar el nombre de la propiedad...
             if (PropertyChanged != null)
             {
 
-                PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
+                PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));// Toma el valor que manda a llamar
 
 
             }
