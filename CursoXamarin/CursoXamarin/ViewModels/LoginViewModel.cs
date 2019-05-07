@@ -102,11 +102,13 @@
             //Isenable = false;
 
             await App.Current.MainPage.Navigation.PushAsync(new Two());
-            //Isenable = false;
+            Password  = String.Empty;
+       
 
         }
 
         private void OnPropertyChanged([CallerMemberName] String PropertyName = "")
+                            /*especifca la propiedad que toma el valor que manda a llamar*/
         {
             if (PropertyChanged != null)
             {
