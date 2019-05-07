@@ -90,7 +90,6 @@
                      VerticalOptions="CenterAndExpand">
             
             <Button
-                   
                     BorderRadius="30"
                     HeightRequest="60"
                     HorizontalOptions="FillAndExpand"
