@@ -39,7 +39,7 @@
                 return _isEnable;
             }
             set {
-
+                //value= es una palabra reservada, las popiedades son como puentes
                 _isEnable = value;
                 OnPropertyChanged();
 
@@ -65,7 +65,11 @@
 
             //App.Current.MainPage.DisplayAlert("login","click en login","ok");
             //IsEnabled = false;
-            await App.Current.MainPage.Navigation.PushAsync(new TwoPage());
+             await App.Current.MainPage.Navigation.PushAsync(new TwoPage());
+            Password = String.Empty;
+           
+            //Async = asincrono, va ser un metodo asincrono
+            //await = esperador, para lanzar una tarea
 
         }
 
