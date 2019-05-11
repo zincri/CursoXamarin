@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CursoXamarin.Views.TwoPage"
-             BindingContext="{Binding Main, Source={StaticResource Locator} }"
-             Title="Two">
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="CursoXamarin.Views.OnePage"
+    BindingContext="{Binding Main, Source={StaticResource Locator} }"
+    Title="One">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Two}">
+            BindingContext="{Binding One}">
             <Label 
                 Text="{Binding Text,Mode=TwoWay}"
                FontSize="Large"

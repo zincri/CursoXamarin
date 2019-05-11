@@ -12,6 +12,16 @@ namespace CursoXamarin.ViewModels
             get;
             set;
         }
+        public OneViewModel One
+        {
+            get;
+            set;
+        }
+        public TwoViewModel Two
+        {
+            get;
+            set;
+        }
         #endregion
         #region Constructors
         public MainViewModel()

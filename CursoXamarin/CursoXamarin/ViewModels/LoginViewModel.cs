@@ -4,7 +4,9 @@
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Windows.Input;
+    using CursoXamarin.Views;
     using GalaSoft.MvvmLight.Command;
+    using Xamarin.Forms;
 
     public class LoginViewModel : INotifyPropertyChanged
     {
@@ -79,7 +81,21 @@
         private async void LoginMethod()
         {
 
-            await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
+            //await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
+
+
+            App.Current.MainPage = new NavigationPage(new AppTabbedPage())
+            {
+                BarBackgroundColor = Color.FromHex("#320172"),
+                BarTextColor = Color.FromHex("#fda8ff")
+            };
+            /*
+            await App.Current.MainPage.Navigation.PushAsync(new AppTabbedPage(){
+                BarBackgroundColor = Color.FromHex("#320172"),
+                BarTextColor = Color.FromHex("#fda8ff")
+            }
+            );
+            */           
             Password = String.Empty;
 
         }

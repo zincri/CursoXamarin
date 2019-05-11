@@ -163,5 +163,7 @@
     <BundleResource Include="Resources\fondo.jpg" />
     <BundleResource Include="Resources\lobo.jpg" />
     <BundleResource Include="Resources\ig.png" />
+    <BundleResource Include="Resources\ic_two.png" />
+    <BundleResource Include="Resources\ic_one.png" />
   </ItemGroup>
 </Project>
