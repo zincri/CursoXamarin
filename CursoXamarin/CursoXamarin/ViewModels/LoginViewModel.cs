@@ -5,7 +5,9 @@ namespace CursoXamarin.ViewModels
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Windows.Input;
+    using CursoXamarin.Views;
     using GalaSoft.MvvmLight.Command;
+    using Xamarin.Forms;
 
     public class LoginViewModel : INotifyPropertyChanged //interfaz ,nos implenenta el evento
     {
@@ -79,11 +81,14 @@ namespace CursoXamarin.ViewModels
         #region Methods
         private async void LoginMethod()
         {//Async asincrono avisa que el metodo sera asincrono y tendra await
-           
-            Password = String.Empty;
-            //await con esto decimo que lo que sigue va hacer una tarea o hilo
-            await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
 
+
+            //await con esto decimo que lo que sigue va hacer una tarea o hilo
+            //await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
+            //await App.Current.MainPage.Navigation.PushAsync(new AppTabbedPage() { BarTextColor = Color.FromHex("#4ff2a2"),BarBackgroundColor= Color.FromHex("#f413cf") });
+
+            App.Current.MainPage = new NavigationPage(new AppTabbedPage()) {BarBackgroundColor= Color.FromHex("#ffbfb2"),BarTextColor = Color.FromHex("#e567ca")};
+            Password = String.Empty;
         }
                               
 

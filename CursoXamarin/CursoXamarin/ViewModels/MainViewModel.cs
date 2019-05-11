@@ -7,6 +7,8 @@ namespace CursoXamarin.ViewModels
 
         #region ViewModels
         public LoginViewModel Login { get; set; }
+        public OneViewModel One { get; set; }
+        public TwoViewModel Two { get; set; }
         #endregion
 
         #region Constructors

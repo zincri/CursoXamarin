@@ -1,5 +1,4 @@
-﻿using CursoXamarin.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace CursoXamarin.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TwoPage : ContentPage
+    public partial class OnePage : ContentPage
     {
-        public TwoPage()
+        public OnePage()
         {
             InitializeComponent();
         }
