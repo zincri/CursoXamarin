@@ -163,4 +163,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\fondo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mipmap-hdpi\ic_onepage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mipmap-hdpi\mipmap-hdpi\ic_twopage.png" />
+  </ItemGroup>
 </Project>

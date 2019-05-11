@@ -7,22 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-
-
-
-
-
-
-
 namespace CursoXamarin.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TwoPage : ContentPage
+    public partial class OnePage : ContentPage
     {
-        public TwoPage()
+        public OnePage()
         {
             InitializeComponent();
-           
         }
     }
 }

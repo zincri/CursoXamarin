@@ -7,6 +7,7 @@ namespace CursoXamarin.ViewModels
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Windows.Input;
+    using Xamarin.Forms;
 
     #region Methods
     public class LoginViewModel : INotifyPropertyChanged
@@ -80,22 +81,23 @@ namespace CursoXamarin.ViewModels
         #region Methods
         private async void LoginMethod()
         {
-           // IsEnabled =false; solo se pone cuando va ha cargar...
+            // IsEnabled =false; solo se pone cuando va ha cargar...
             Usuario = string.Empty;
-            //password = string.Empty;// La mejor como poner cada vacia... 
+            //password = string.Empty;// La mejor manera de  como poner cadena  vacia... 
 
             //App.Current.MainPage.DisplayAlert("Login","Click en Login" ,"Ok");
             //IsEnabled = false;
 
-            await App.Current.MainPage.Navigation.PushAsync(new TwoPage());  // Async (Especifica que va ha mandar una tarea) tiene que ir de la mano con await es un esperador...
-            IsEnabled = false;
+            // await App.Current.MainPage.Navigation.PushAsync(new TwoPage());  // Async (Especifica que va ha mandar una tarea) tiene que ir de la mano con await es un esperador...
+            // IsEnabled = false;
+
+            //await App.Current.MainPage.Navigation.PushAsync(new AppTabbedPage() { BarBackgroundColor = Color.FromHex("#F8BBD0"), BarTextColor = Color.FromHex("#BBDEFB") });
+            App.Current.MainPage = (new AppTabbedPage() { BarBackgroundColor = Color.FromHex("#F8BBD0"), BarTextColor = Color.FromHex("#BBDEFB") });
+
+
         }
 
-
-
-        #endregion
-
-
+        #endregion Methods
 
         #region Constructor
         public LoginViewModel()
