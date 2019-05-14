@@ -10,13 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace CursoXamarin.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Two : ContentPage
+	public partial class OnePage : ContentPage
 	{
-		public Two ()
+		public OnePage ()
 		{
 			InitializeComponent ();
-
-       
+            
 		}
-	}
+        
+       
+    }
 }

@@ -6,6 +6,7 @@
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Windows.Input;
+    using Xamarin.Forms;
 
     public class LoginViewModel : INotifyPropertyChanged
     {
@@ -101,14 +102,27 @@
             //App.Current.MainPage.DisplayAlert("Atencion","Click Login","OK");
             //Isenable = false;
 
-            await App.Current.MainPage.Navigation.PushAsync(new Two());
-            Password  = String.Empty;
+            //await App.Current.MainPage.Navigation.PushAsync(new Two());
+            // Password  = String.Empty;
+
+            /*    await App.Current.MainPage.Navigation.PushAsync(new AppTabbedPage() {
+                    BarBackgroundColor =Color.FromHex("#e91e63"), BarTextColor=Color.FromHex("#3949ab")});
+                Password = String.Empty;*/
+
+            App.Current.MainPage = new NavigationPage(new AppTabbedPage())
+            {
+                BarBackgroundColor = Color.FromHex("#320172"),
+                BarTextColor = Color.FromHex("#fda8ff")
+            };
+        
+      
+
        
 
         }
 
         private void OnPropertyChanged([CallerMemberName] String PropertyName = "")
-                            /*especifca la propiedad que toma el valor que manda a llamar*/
+                           /*especifca la propiedad que toma el valor que manda a llamar*/
         {
             if (PropertyChanged != null)
             {
