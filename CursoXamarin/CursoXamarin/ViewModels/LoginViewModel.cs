@@ -88,6 +88,15 @@
                 return new RelayCommand(LoginMethod);
             }
         }
+
+        public ICommand RegisterCommand {
+
+            get {
+                return new RelayCommand(RegisterMethod);
+            }
+
+        }
+       
         #endregion
         
         #region Events
@@ -115,10 +124,13 @@
                 BarTextColor = Color.FromHex("#fda8ff")
             };
         
-      
+        }
 
-       
+        private async void RegisterMethod() {
 
+            MainViewModel mv = MainViewModel.GetInstance();
+            mv.Register = new RegisterViewModel();
+          await App.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
 
         private void OnPropertyChanged([CallerMemberName] String PropertyName = "")

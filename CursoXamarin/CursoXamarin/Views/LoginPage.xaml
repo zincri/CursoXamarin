@@ -101,6 +101,7 @@
                     HorizontalOptions="FillAndExpand"
                     BorderRadius="30"
                     TextColor="White"
+                        Command="{Binding RegisterCommand }"
                     />
 
 
