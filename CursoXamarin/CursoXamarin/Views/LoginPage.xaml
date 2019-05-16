@@ -107,6 +107,7 @@
                     Text="Register"
                     TextColor="Blue"
                     IsEnabled="true"
+                    Command="{Binding RegisterCommand}"
                     BackgroundColor="#bdfcc8"
               
                     

@@ -77,6 +77,13 @@ namespace CursoXamarin.ViewModels
                 return new RelayCommand(LoginMethod);
             }
         }
+
+        public ICommand RegisterCommand
+        {
+            get {
+                return new RelayCommand(RegisterMethod);
+            }
+        }
         #endregion
         #region Methods
         private async void LoginMethod()
@@ -89,6 +96,15 @@ namespace CursoXamarin.ViewModels
 
             App.Current.MainPage = new NavigationPage(new AppTabbedPage()) {BarBackgroundColor= Color.FromHex("#ffbfb2"),BarTextColor = Color.FromHex("#e567ca")};
             Password = String.Empty;
+        }
+
+        private async void RegisterMethod() {
+
+            MainViewModel main = MainViewModel.GetInstance();
+
+            main.Register = new RegisterViewModel();
+
+            App.Current.MainPage = new NavigationPage(new RegisterPage());
         }
                               
 
