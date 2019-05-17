@@ -18,6 +18,17 @@ namespace CursoXamarin.ViewModels
 
         #endregion
 
+
+
+        #region Services 
+
+        public ApiServices apiServices
+        {
+            get;
+            set;
+        }
+        #endregion
+
         #region Vars
         private bool _isEnabled;
         private string _usuario;
@@ -62,10 +73,15 @@ namespace CursoXamarin.ViewModels
                 _password = value;
                 OnPropertyChanged();
             }
-
-
-
         }
+
+        
+
+
+
+
+
+
         public bool IsEnabled { get { return _isEnabled; } set { _isEnabled = value; OnPropertyChanged(); } }
 
 
@@ -79,10 +95,14 @@ namespace CursoXamarin.ViewModels
 
 
         #region Methods
+#pragma warning disable CS1998 // El método asincrónico carece de operadores "await" y se ejecutará de forma sincrónica. Puede usar el operador 'await' para esperar llamadas API que no sean de bloqueo o 'await Task.Run(...)' para hacer tareas enlazadas a la CPU en un subproceso en segundo plano.
         private async void LoginMethod()
+#pragma warning restore CS1998 // El método asincrónico carece de operadores "await" y se ejecutará de forma sincrónica. Puede usar el operador 'await' para esperar llamadas API que no sean de bloqueo o 'await Task.Run(...)' para hacer tareas enlazadas a la CPU en un subproceso en segundo plano.
         {
-            // IsEnabled =false; solo se pone cuando va ha cargar...
-            Usuario = string.Empty;
+             IsEnabled =false; //solo se pone cuando va ha cargar...
+             Usuario = string.Empty;
+
+
             //password = string.Empty;// La mejor manera de  como poner cadena  vacia... 
 
             //App.Current.MainPage.DisplayAlert("Login","Click en Login" ,"Ok");
@@ -93,6 +113,7 @@ namespace CursoXamarin.ViewModels
 
             //await App.Current.MainPage.Navigation.PushAsync(new AppTabbedPage() { BarBackgroundColor = Color.FromHex("#F8BBD0"), BarTextColor = Color.FromHex("#BBDEFB") });
             App.Current.MainPage = (new AppTabbedPage() { BarBackgroundColor = Color.FromHex("#F8BBD0"), BarTextColor = Color.FromHex("#BBDEFB") });
+            //awit.(new AppTabedpage)
 
 
         }
@@ -106,6 +127,7 @@ namespace CursoXamarin.ViewModels
             this.Usuario = "Antonio ";
             this.password = "1234";
             IsEnabled = true;
+           
         }
 
         // Para no esceficar lo que va ha llamar
