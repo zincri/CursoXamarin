@@ -1,4 +1,4 @@
-﻿namespace CursoXamarin.ViewModels
+﻿ namespace CursoXamarin.ViewModels
 {
     using CursoXamarin.Views;
     using GalaSoft.MvvmLight.Command;
@@ -9,9 +9,23 @@
 
     public class LoginViewModel : INotifyPropertyChanged
     {
+
+        #region Services
+        private ApiService apiService
+
+        {
+
+            get;
+            set;
+
+        }
+
+
+        #endregion
+
         #region Vars
         private bool _isEnable
-
+      
         {
             get;
             set;
@@ -46,8 +60,10 @@
             }
         }
 
+        public bool IsEnable { get; set; }
+
         #endregion
-        
+
         #region Commands
         public ICommand LoginCommand { get { return new RelayCommand(LoginMethod); } }
 
@@ -64,7 +80,8 @@
         {
 
             //App.Current.MainPage.DisplayAlert("login","click en login","ok");
-            //IsEnabled = false;
+             IsEnabled = false;
+             
              await App.Current.MainPage.Navigation.PushAsync(new TwoPage());
             Password = String.Empty;
            

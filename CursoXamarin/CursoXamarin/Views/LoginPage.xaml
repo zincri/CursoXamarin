@@ -72,7 +72,22 @@
                 </Frame>
 
             </StackLayout>
-            
+
+            <StackLayout>
+                
+                    <ActivityIndicator
+                        
+                        IsEnabled = "True"
+                        IsRunning = "True" 
+                        Color = "white"
+                        >
+                       
+                        
+                    </ActivityIndicator>
+
+                </StackLayout>
+
+
             <StackLayout
                     Padding="30,0"
                     Margin="0,0,0,0"
