@@ -82,6 +82,16 @@
                 </Frame>
 
             </StackLayout>
+
+                <StackLayout>
+
+                    <ActivityIndicator 
+                        IsEnabled="{Binding AI_IsEnable,Mode=TwoWay}"
+                        IsRunning="{Binding IsRunning,Mode=TwoWay}"
+                        Color="White"
+                        >
+                    </ActivityIndicator>
+                </StackLayout>
             
              <StackLayout 
                     Padding="30,0"

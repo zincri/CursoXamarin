@@ -5,6 +5,7 @@ namespace CursoXamarin.ViewModels
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Windows.Input;
+    using CursoXamarin.Services;
     using CursoXamarin.Views;
     using GalaSoft.MvvmLight.Command;
     using Xamarin.Forms;
@@ -14,7 +15,16 @@ namespace CursoXamarin.ViewModels
         #region Events
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
+
+        #region Services
+        public ApiService apiService{
+            get; set;
+        }
+        #endregion
+
         #region Vars
+        private bool _AI_isEnabled;
+        private bool _isRunning;
         private bool _isEnabled;
         private string _password;
         private string _usuario;
@@ -60,6 +70,25 @@ namespace CursoXamarin.ViewModels
             }
         }
 
+        public bool AI_IsEnabled
+        {
+            get { return _AI_isEnabled; }
+            set {
+                _AI_isEnabled = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsRunning
+        {
+            get { return _isRunning; }
+            set {
+                _isRunning = value;
+                OnPropertyChanged();
+            }
+
+        }
+
         #endregion
         #region Constructors
         public LoginViewModel()
@@ -67,6 +96,10 @@ namespace CursoXamarin.ViewModels
             Usuario = "jhoana";
             Password = "123";
             IsEnabled = true;
+            AI_IsEnabled = false;
+            IsRunning = false;
+
+            this.apiService=new ApiService();
         }
         #endregion
         #region Commands
@@ -86,7 +119,9 @@ namespace CursoXamarin.ViewModels
         }
         #endregion
         #region Methods
+        // El método asincrónico carece de operadores "await" y se ejecutará de forma sincrónica. Puede usar el operador 'await' para esperar llamadas API que no sean de bloqueo o 'await Task.Run(...)' para hacer tareas enlazadas a la CPU en un subproceso en segundo plano.
         private async void LoginMethod()
+        // El método asincrónico carece de operadores "await" y se ejecutará de forma sincrónica. Puede usar el operador 'await' para esperar llamadas API que no sean de bloqueo o 'await Task.Run(...)' para hacer tareas enlazadas a la CPU en un subproceso en segundo plano.
         {//Async asincrono avisa que el metodo sera asincrono y tendra await
 
 
@@ -94,11 +129,33 @@ namespace CursoXamarin.ViewModels
             //await App.Current.MainPage.Navigation.PushAsync(new Views.TwoPage());
             //await App.Current.MainPage.Navigation.PushAsync(new AppTabbedPage() { BarTextColor = Color.FromHex("#4ff2a2"),BarBackgroundColor= Color.FromHex("#f413cf") });
 
-            App.Current.MainPage = new NavigationPage(new AppTabbedPage()) {BarBackgroundColor= Color.FromHex("#ffbfb2"),BarTextColor = Color.FromHex("#e567ca")};
+            IsEnabled = false;
+            AI_IsEnabled = true;
+            IsRunning = true;
+            var conection = await this.apiService.CheckConection();
+            if (!conection.IsSuccess)
+            {
+                IsEnabled = true;
+                AI_IsEnabled = false;
+                IsRunning = false;
+
+                App.Current.MainPage.DisplayAlert("Error", conection.Message, "Ok");
+                Password = string.Empty;
+                return;
+            }
+
+            //App.Current.MainPage = new NavigationPage(new AppTabbedPage()) {BarBackgroundColor= Color.FromHex("#ffbfb2"),BarTextColor = Color.FromHex("#e567ca")};
+            await App.Current.MainPage.Navigation.PushAsync(new AppTabbedPage() { BarTextColor = Color.FromHex("#4ff2a2"), BarBackgroundColor = Color.FromHex("#f413cf") });
             Password = String.Empty;
+            IsEnabled = true;
+            AI_IsEnabled = false;
+            IsRunning = false;
+
         }
 
+        // El método asincrónico carece de operadores "await" y se ejecutará de forma sincrónica. Puede usar el operador 'await' para esperar llamadas API que no sean de bloqueo o 'await Task.Run(...)' para hacer tareas enlazadas a la CPU en un subproceso en segundo plano.
         private async void RegisterMethod() {
+#pragma warning restore CS1998 // El método asincrónico carece de operadores "await" y se ejecutará de forma sincrónica. Puede usar el operador 'await' para esperar llamadas API que no sean de bloqueo o 'await Task.Run(...)' para hacer tareas enlazadas a la CPU en un subproceso en segundo plano.
 
             MainViewModel main = MainViewModel.GetInstance();
 
@@ -116,5 +173,7 @@ namespace CursoXamarin.ViewModels
             }
         }
         #endregion
+
+       
     }
 }
