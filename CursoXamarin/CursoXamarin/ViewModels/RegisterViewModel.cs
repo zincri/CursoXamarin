@@ -7,7 +7,7 @@ namespace CursoXamarin.ViewModels
     public class RegisterViewModel
     {
         public RegisterViewModel() {
-
+        
             Text = "Hola";
 
         }
