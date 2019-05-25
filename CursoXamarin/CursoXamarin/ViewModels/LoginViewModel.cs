@@ -187,9 +187,9 @@
                 await App.Current.MainPage.Navigation.PushAsync(new AppTabbedPage() {
                 BarBackgroundColor =Color.FromHex("#e91e63"), BarTextColor=Color.FromHex("#3949ab")});
                 Password = String.Empty;
-            Isenable = true;
-            AI_isEnable = false;
-            IsRunnig = false;
+                Isenable = true;
+                AI_isEnable = false;
+                IsRunnig = false;
 
 
 
