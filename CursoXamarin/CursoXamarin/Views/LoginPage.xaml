@@ -72,7 +72,14 @@
                 </Frame>
 
             </StackLayout>
-            
+            <StackLayout>
+                    <ActivityIndicator
+                        IsEnabled="{Binding AI_IsEnabled,Mode=TwoWay}"
+                        IsRunning="{Binding AI_IsRunning,Mode=TwoWay}"
+                        Color="White">
+                        
+                    </ActivityIndicator>
+            </StackLayout>
             <StackLayout
                     Padding="30,0"
                     Margin="0,0,0,0"
@@ -93,6 +100,7 @@
                         HeightRequest="60"
                         HorizontalOptions="FillAndExpand"
                         Text="Register"
+                        Command="{Binding RegisterCommand}"
                         TextColor="White"></Button>
             </StackLayout>
 
