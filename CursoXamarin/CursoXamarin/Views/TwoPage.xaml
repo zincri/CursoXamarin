@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CursoXamarin.Views.TwoPage">
     <ContentPage.Content>
-        <Label Text="Zincri"
+        <Label Text="TwoPage"
                FontSize="Large"
-               TextColor="Navy"
+               TextColor="BlueViolet"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"></Label>
     </ContentPage.Content>
+   
 </ContentPage>
